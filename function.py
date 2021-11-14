@@ -11,5 +11,9 @@ def imshow(X, resize=None):
  """
     image = Image.fromarray(X, 'RGB')
     im_resized = image.resize((width, height))
+
+    create tabs
+tab_nest = widgets.Tab()
+tab_nest.set_title(0, 'Image Resize')
 return im_resized
 
