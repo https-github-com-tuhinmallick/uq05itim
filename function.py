@@ -9,5 +9,7 @@ def imshow(X, resize=None):
  We should be able to install this package in Google Colab from your Git
  repo.
  """
-   
-pass
+    image = Image.fromarray(X, 'RGB')
+    im_resized = image.resize((width, height))
+return im_resized
+
