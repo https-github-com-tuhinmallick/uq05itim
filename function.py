@@ -12,11 +12,9 @@ def imshow(X, resize=None):
  We should be able to install this package in Google Colab from your Git
  repo.
  """
-    image = Image.fromarray(X, 'RGB')
-    im_resized = image.resize((width, height))
-
-    create tabs
-tab_nest = widgets.Tab()
-tab_nest.set_title(0, 'Image Resize')
-return im_resized
+    resized_width, resized_height = resize
+    image = Image.fromarray(X.astype('uint8'), 'RGB')
+    im_resized = image.resize((resized_width, resized_height), Image.ANTIALIAS)
+    im_resized.show()
+    pass
 
