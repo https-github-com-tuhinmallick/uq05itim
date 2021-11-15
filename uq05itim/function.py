@@ -2,6 +2,9 @@
 import numpy as np
 from ipywidgets import interact, fixed
 from PIL import Image
+
+interact(imshow, resize=widgets.IntSlider(min=-10, max=30, step=1, value=10));
+
 def imshow(X, resize=None):
 """
  You should create a way to resize an image from an array X.
@@ -9,5 +12,9 @@ def imshow(X, resize=None):
  We should be able to install this package in Google Colab from your Git
  repo.
  """
-   
-pass
+    resized_width, resized_height = resize
+    image = Image.fromarray(X.astype('uint8'), 'RGB')
+    im_resized = image.resize((resized_width, resized_height), Image.ANTIALIAS)
+    im_resized.show()
+    pass
+
