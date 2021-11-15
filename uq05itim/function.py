@@ -3,8 +3,6 @@ import numpy as np
 from ipywidgets import interact, fixed
 from PIL import Image
 
-interact(imshow, resize=widgets.IntSlider(min=-10, max=30, step=1, value=10));
-
 def imshow(X, resize=None):
 """
  You should create a way to resize an image from an array X.
